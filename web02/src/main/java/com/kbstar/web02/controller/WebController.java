@@ -11,7 +11,7 @@ public class WebController {
         return "index";
     }
 
-    @RequestMapping("/nex")
+    @RequestMapping("/next")
     public String next() {
         return "next";
     }
