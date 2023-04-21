@@ -1,15 +1,17 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Cust;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Map;
 
 @Controller
 public class MainController {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
     @RequestMapping("/")
     public String main() {
         return "index";
@@ -27,16 +29,23 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping(value ="/loginSuccess", method = {RequestMethod.GET})
-    public String loginSuccess(Model model, @RequestParam Map<String, String> params) {
-        model.addAttribute("id", params.get("id"));
-        model.addAttribute("pwd", params.get("pwd"));
-        return "loginSuccess";
+    @RequestMapping(value ="/loginImpl")
+    public String loginImpl(Model model, String id, String pwd) {
+        logger.info(id + " " + pwd);
+        return "index";
     }
 
     @RequestMapping("/register")
     public String register(Model model) {
         model.addAttribute("center", "register");
+        return "index";
+    }
+
+    @RequestMapping(value ="/registerImpl")
+    public String registerImpl(Model model, Cust custDTO) {
+        logger.info("-----" + custDTO.toString() + "-----");
+        model.addAttribute("rcust", custDTO);
+        model.addAttribute("center", "registerok");
         return "index";
     }
 

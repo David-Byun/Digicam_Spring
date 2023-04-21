@@ -1,26 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script>
-    let loginForm ={
-        init: function () {
-            $('#login_btn').click(function () {
-                loginForm.send()
-            });
-        },
-        send: function () {
-            $('#login_form').attr({
-                'action' : '/loginSuccess',
-                'method' : 'post',
-            });
-            $('#login_form').submit();
 
-        },
-    };
-    $(function () {
-        loginForm.init();
-    })
-
-</script>
 
 <div class="col-sm-8 text-left">
     <h2>로그인 페이지</h2>
