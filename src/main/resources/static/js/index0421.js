@@ -45,5 +45,4 @@ let registerForm = {
 $(function () {
     registerForm.init();
     loginForm.init();
-    jsp01.init(${num});
 });

@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=877b72a4084b62dd3183b611e21359eb"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="/js/index0421.js"></script>
@@ -61,6 +62,9 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/jsp/jsp01">JSP</a></li>
+                <li><a href="/ajax">AJAX</a></li>
+                <li><a href="/map/map01">Map</a></li>
+                <li><a href="/chart/chart01">Chart</a></li>
                 <li><a href="/cust">Cust</a></li>
                 <li><a href="/item">Items</a></li>
                 <c:if test="${logincust != null}">
@@ -124,10 +128,6 @@
         <!-- Right Sidebar End -->
     </div>
 </div>
-
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
 
 </body>
 </html>
