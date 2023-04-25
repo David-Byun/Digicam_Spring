@@ -17,8 +17,8 @@
             $('#getdata > button').click(function () {
                 $.ajax({
                     url : '/getdata',
-                    success: function (data) {
-                        ajax03.display(data)
+                    success: function (result) {
+                        ajax03.display(result)
                     },
                 })
             })
@@ -37,7 +37,7 @@
                 result += '<h4>';
                 result += item.id + ' ' + item.pwd + ' ' + item.name;
                 result += '</h4>';
-                result += `<h4>아이디 : ${item.id} 패스워드 : ${item.pwd} 이름 : ${item.name}</h4>`
+
             });
             $('#getdata > div').html(result);
         },

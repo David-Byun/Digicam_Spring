@@ -1,17 +1,20 @@
 package com.kbstar.controller;
 
+import org.json.simple.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Random;
+
 @Controller
 @RequestMapping("/chart")
 public class ChartController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    String dir = "map/";
+    String dir = "chart/";
 
     @RequestMapping("/chart01")
     public String chart01(Model model) {
@@ -34,6 +37,13 @@ public class ChartController {
         return "index";
     }
 
+    @RequestMapping("/chart05")
+    public String chart05(Model model) {
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"chart05");
+        return "index";
+    }
+
     @RequestMapping("/chart04")
     public String chart04(Model model) {
         model.addAttribute("left", dir+"left");
@@ -41,10 +51,8 @@ public class ChartController {
         return "index";
     }
 
-    @RequestMapping("/chart05")
-    public String chart05(Model model) {
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"chart05");
-        return "index";
-    }
+
+
+
+
 }

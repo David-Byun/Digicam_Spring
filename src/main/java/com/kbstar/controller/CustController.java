@@ -1,6 +1,7 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -9,12 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Controller
+@Slf4j
 @RequestMapping("/cust")
 public class CustController {
 
-    Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    //Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
     private final String DIR = "cust/";
 
     // 127.0.0.1/cust
@@ -22,6 +25,9 @@ public class CustController {
     public String main(Model model) {
         model.addAttribute("center", DIR+"center");
         model.addAttribute("left", DIR+"left");
+        Random r = new Random();
+        int inx = r.nextInt(1000) + 1;
+        log.info(inx + "");
         return "index";
     }
 
@@ -62,3 +68,19 @@ public class CustController {
         return "index";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
