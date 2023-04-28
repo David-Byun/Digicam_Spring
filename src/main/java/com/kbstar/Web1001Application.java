@@ -19,5 +19,4 @@ public class Web1001Application {
         resolver.setSuffix(".jsp");
         return resolver;
     }
-
 }

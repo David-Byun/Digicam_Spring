@@ -7,7 +7,7 @@
     <select id="select" parameterType="String" resultType="cust">
         SELECT * FROM CUST WHERE id=#{id}
     </select>
-    <select id="selectAll" resultType="cust">
+    <select id="selectall" resultType="cust">
         SELECT * FROM CUST
     </select>
     <insert id="insert" parameterType="cust">

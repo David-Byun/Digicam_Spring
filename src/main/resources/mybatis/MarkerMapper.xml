@@ -5,6 +5,9 @@
 <mapper namespace="com.kbstar.mapper.MarkerMapper">
 
     <!-- join등 데이터 가져올때 컬럼 내용이 그대로 dto에 입력됨 -->
+    <select id="getLoc" parameterType="String" resultType="marker">
+        SELECT * FROM marker WHERE LOC=UPPER(#{loc})
+    </select>
     <select id="select" parameterType="Integer" resultType="marker">
         SELECT * FROM marker WHERE ID=#{id}
     </select>

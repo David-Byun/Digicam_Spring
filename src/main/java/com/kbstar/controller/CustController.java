@@ -1,6 +1,9 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
+import com.kbstar.mapper.CustMapper;
+import com.kbstar.service.CustService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,10 +15,13 @@ import java.util.Random;
 
 @Controller
 @Slf4j
+@RequiredArgsConstructor
 @RequestMapping("/cust")
 public class CustController {
 
     //Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+    private final CustService custService;
     private final String DIR = "cust/";
 
     // 127.0.0.1/cust
@@ -46,13 +52,13 @@ public class CustController {
     }
 
     @RequestMapping("/all")
-    public String all(Model model) {
-        List<Cust> list = new ArrayList<>();
-        list.add(new Cust("id01","pwd01","제임스1"));
-        list.add(new Cust("id02","pwd02","제임스2"));
-        list.add(new Cust("id03","pwd03","제임스3"));
-        list.add(new Cust("id04","pwd04","제임스4"));
-        list.add(new Cust("id05","pwd05","제임스5"));
+    public String all(Model model) throws Exception {
+        List<Cust> list = null;
+        try {
+            list = custService.get();
+        } catch (Exception e) {
+            throw new Exception("시스템 장애 : ER0001");
+        }
         model.addAttribute("clist", list);
         model.addAttribute("center", DIR+"all");
         model.addAttribute("left", DIR+"left");
@@ -66,16 +72,6 @@ public class CustController {
         return "index";
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

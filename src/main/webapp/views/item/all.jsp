@@ -25,10 +25,10 @@
                 <tbody>
                 <c:forEach var="obj" items="${allItem}">
                     <tr>
-                        <td><img class="small_img" src="/img/${obj.imgname}" /></td>
+                        <td><img class="small_img" src="/uimg/${obj.imgname}" /></td>
                         <td>${obj.id}</td>
                         <td>${obj.name}</td>
-                        <td><fmt:formatNumber value="${obj.price}" type="currency"/></td>
+                        <td><fmt:formatNumber value="${obj.price}" type="currency" currencySymbol="$"/></td>
                         <td><fmt:formatDate value="${obj.regdate}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
                     </tr>
                 </c:forEach>

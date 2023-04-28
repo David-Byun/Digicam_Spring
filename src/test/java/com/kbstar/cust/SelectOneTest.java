@@ -1,5 +1,6 @@
 package com.kbstar.cust;
 
+import com.kbstar.dto.Cust;
 import com.kbstar.service.CustService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -14,11 +15,15 @@ public class SelectOneTest {
     @Autowired
     CustService service;
 
+
     @Test
     void contextLoads() {
-        String obj = "id01";
+        Cust cust = null;
         try {
-            service.get(obj);
+            cust = service.get("id77");
+            log.info("=========================");
+            log.info(cust.toString());
+            log.info("=========================");
         } catch (Exception e) {
             log.info("오류");
         }
