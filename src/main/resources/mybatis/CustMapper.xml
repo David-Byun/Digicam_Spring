@@ -19,5 +19,8 @@
     <delete id="delete" parameterType="String">
         DELETE FROM CUST WHERE ID=#{id}
     </delete>
+    <select id="getpage" resultType="cust">
+        SELECT * FROM CUST
+    </select>
 
 </mapper>

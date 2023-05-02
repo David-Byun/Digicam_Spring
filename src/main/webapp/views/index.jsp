@@ -71,35 +71,36 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="/jsp/jsp01">JSP</a></li>
-                <li><a href="/ajax">AJAX</a></li>
-                <li><a href="/map/map01">Map</a></li>
-                <li><a href="/chart/chart01">Chart</a></li>
                 <li><a href="/cust">Cust</a></li>
                 <li><a href="/item">Items</a></li>
                 <c:if test="${logincust != null}">
+                    <li><a href="/jsp/jsp01">JSP</a></li>
+                    <li><a href="/ajax">AJAX</a></li>
+                    <li><a href="/map/map01">Map</a></li>
+                    <li><a href="/chart/chart01">Chart</a></li>
                     <li><a href="#">Contact</a></li>
                 </c:if>
             </ul>
             <c:choose>
+                <%-- 세션에 담은 정보도 끄집어 낼 수 있다.--%>
                 <c:when test="${logincust == null}">
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- html에서 한칸은 인식함 -->
                         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
                     </ul>
                 </c:when>
                 <c:otherwise>
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- html에서 한칸은 인식함 -->
                         <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/custinfo?id=${logincust.id}">${logincust.id}</a></li>
                     </ul>
                 </c:otherwise>
             </c:choose>
         </div>
     </div>
 </nav>
-<!-- Nav Bar End -->
 
 
 <div class="container-fluid text-center">

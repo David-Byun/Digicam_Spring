@@ -5,5 +5,6 @@
     <p>Cust Left</p>
     <p><a href="/cust/add">ADD</a></p>
     <p><a href="/cust/all">ALL</a></p>
+    <p><a href="/cust/allpage">ALL PAGE</a></p>
     <p><a href="/cust/link">Link</a></p>
 </div>

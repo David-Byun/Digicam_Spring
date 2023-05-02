@@ -10,14 +10,13 @@
                 let id = $('#id').val();
                 let pwd = $('#pwd').val();
                 let name = $('#name').val();
-                if ($(this).val() != '' && pwd != '' && name != '' && $(this).val() <= 3) {
+                if ($(this).val() != '' && pwd != '' && name != '' && $(this).val() < 3) {
                     $('#register_btn').removeClass('disabled');
                 }
             })
             $('#id').keyup(function () {
-                $('#register_btn').addClass('disabled');
                 let txt_id = $(this).val();
-                if (txt_id.length <= 3) {
+                if (txt_id.length < 3) {
                     return;
                 }
                 $.ajax({
@@ -40,8 +39,8 @@
             let id = $('#id').val();
             let pwd = $('#pwd').val();
             let name = $('#name').val();
-            if (id.length <= 3) {
-                $('#check_id').text('4자리 이상이어야 합니다.');
+            if (id.length < 3) {
+                $('#check_id').text('3자리 이상이어야 합니다.');
                 $('#id').focus()
                 return;
             }

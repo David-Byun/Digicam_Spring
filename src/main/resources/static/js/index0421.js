@@ -1,4 +1,3 @@
-
 let login_form = {
     init:function(){
         $('#login_btn').click(function(){
@@ -25,3 +24,7 @@ let jsp01 = {
         $('#jsp01').text(this.data+'');
     }
 };
+
+$(function () {
+    login_form.init();
+})
