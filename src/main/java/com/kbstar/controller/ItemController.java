@@ -64,6 +64,7 @@ public class ItemController {
         } catch (Exception e) {
             throw new Exception("시스템 장애 : ER0002");
         }
+        model.addAttribute("target", "item");
         model.addAttribute("cpage", p);
         model.addAttribute("center", DIR + "all");
         model.addAttribute("left", DIR + "allpage");
