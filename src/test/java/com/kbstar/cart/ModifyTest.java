@@ -18,7 +18,7 @@ public class ModifyTest {
 
     @Test
     void contextLoads() {
-        Cart cart =  new Cart(1, "id01", 103, 3);
+        Cart cart =  new Cart("id02", 103,4);
         try {
             service.modify(cart);
             log.info("수정 정상");

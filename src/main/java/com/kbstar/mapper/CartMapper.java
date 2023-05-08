@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface CartMapper extends KBMapper<String, Cart> {
     //서비스 이름과 매퍼의 이름을 같이 가져가도 상관 없음
-    public List<Cart> getMyCart(String cid);
+    List<Cart> getmycart(String id);
 }

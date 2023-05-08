@@ -8,7 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Slf4j
 @SpringBootTest
-class Web12ApplicationTests {
+class Web13ApplicationTests {
 
     //평문 암호화
     @Autowired

@@ -38,13 +38,14 @@ public class CartService implements KBService<String, Cart>{
         return mapper.select(s);
     }
 
+
     @Override
     public List<Cart> get() throws Exception {
         return mapper.selectall();
     }
 
-    public List<Cart> getMyCart(String cid) throws Exception {
-        return mapper.getMyCart(cid);
+    public List<Cart> getMyCart(String id) {
+        return mapper.getmycart(id);
     }
 
     @Override

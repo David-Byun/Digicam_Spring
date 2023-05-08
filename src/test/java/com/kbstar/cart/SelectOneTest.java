@@ -18,7 +18,7 @@ public class SelectOneTest {
     @Test
     void contextLoads() {
         try {
-            service.get("1");
+            service.get(Integer.valueOf("1"));
             log.info("조회 정상");
         } catch (Exception e) {
             log.info("에러..");

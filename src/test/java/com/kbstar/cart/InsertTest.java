@@ -19,17 +19,12 @@ public class InsertTest {
 
     @Test
     void contextLoads() {
-        Cart cart =  new Cart("id04", 101, 3);
+        Cart cart =  new Cart("abc", 101, 7);
         try {
             service.register(cart);
-            log.info("등록 정상");
+            service.get();
         } catch (Exception e) {
-            if (e instanceof DuplicateKeyException) {
-                log.info("ID가 중복되었습니다.");
-            } else {
-                log.info("에러가 발생했어요.");
-            }
+            log.info("에러 발생");
         }
-
     }
 }

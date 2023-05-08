@@ -1,15 +1,20 @@
 package com.kbstar.controller;
 
 
+import com.kbstar.dto.Cart;
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Marker;
+import com.kbstar.service.CartService;
 import com.kbstar.service.CustService;
 import com.kbstar.service.MarkerService;
+import com.kbstar.util.FileUploadUtil;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,6 +27,23 @@ public class AjaxImplController {
 
     private final MarkerService markerService;
     private final CustService custService;
+    private final CartService cartService;
+
+    @Value("${uploadimgdir}")
+    String imgdir;
+
+    @RequestMapping("/saveimg")
+    public String saveimg(MultipartFile file){
+        String filename = file.getOriginalFilename();
+        FileUploadUtil.saveFile(file, imgdir);
+        return filename;
+    }
+
+    @RequestMapping("/addcart")
+    public Object addcart(Cart cart) throws Exception {
+        cartService.register(cart);
+        return "";
+    }
 
     @RequestMapping("/getservertime")
     public Object getservertime() {

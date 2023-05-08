@@ -18,7 +18,7 @@ public class DeleteTest {
     void contextLoads() {
 
         try {
-            service.remove("1");
+            service.remove(104);
             log.info("삭제 정상");
             service.get();
         } catch (Exception e) {

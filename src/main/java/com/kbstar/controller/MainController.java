@@ -24,7 +24,8 @@ public class MainController {
     private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
-    public String main() {
+    public String main(Model model) {
+        model.addAttribute("center", "center");
         return "index";
     }
 
@@ -39,6 +40,19 @@ public class MainController {
         model.addAttribute("center", "login");
         return "index";
     }
+
+    @RequestMapping("/websocket")
+    public String websocket(Model model) {
+        model.addAttribute("center", "websocket");
+        return "index";
+    }
+
+    @RequestMapping("/pic")
+    public String pic(Model model) {
+        model.addAttribute("center", "pic");
+        return "index";
+    }
+
 
     @RequestMapping("/custinfo")
     public String custinfo(Model model, String id) throws Exception {

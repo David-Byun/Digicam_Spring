@@ -5,6 +5,8 @@
 <head>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=877b72a4084b62dd3183b611e21359eb"></script>
@@ -94,6 +96,9 @@
                         <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/item/allcart?id=${logincust.id}"><span class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="/custinfo?id=${logincust.id}">${logincust.id}</a></li>
                     </ul>
                 </c:otherwise>
@@ -117,14 +122,7 @@
         <!-- Left Nav End -->
 
         <!-- Main Center Start -->
-        <c:choose>
-            <c:when test="${center == null}">
-                <jsp:include page="center.jsp" />
-            </c:when>
-            <c:otherwise>
-                <jsp:include page="${center}.jsp" />
-            </c:otherwise>
-        </c:choose>
+        <jsp:include page="${center}.jsp" />
 
         <!-- Main Center End -->
         <!-- Right Sidebar Start -->

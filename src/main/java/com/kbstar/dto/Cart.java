@@ -1,37 +1,38 @@
 package com.kbstar.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @AllArgsConstructor
 @ToString
+@Setter
+@NoArgsConstructor
 public class Cart {
     private int id;
-    private String custId;
-    private int itemId;
+    private String cust_id;
+    private int item_id;
     private int cnt;
     private Date rdate;
 
-    //constructor 만들어서 테스트 해봐도 됨
+    public Cart(String cust_id, int item_id, int cnt) {
+        this.cust_id = cust_id;
+        this.item_id = item_id;
+        this.cnt = cnt;
+    }
+
+    public Cart(int id, String cust_id, int item_id, int cnt) {
+        this.id = id;
+        this.cust_id = cust_id;
+        this.item_id = item_id;
+        this.cnt = cnt;
+    }
+
     private String cust_name;
     private String item_name;
     private int item_price;
     private String item_imgname;
 
-    public Cart(String custId, int itemId, int cnt) {
-        this.custId = custId;
-        this.itemId = itemId;
-        this.cnt = cnt;
-    }
 
-    public Cart(int id, String custId, int itemId, int cnt) {
-        this.id = id;
-        this.custId = custId;
-        this.itemId = itemId;
-        this.cnt = cnt;
-    }
 }

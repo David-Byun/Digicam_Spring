@@ -3,6 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <div class="col-sm-8 text-left">
-    <h1><spring:message code="site.title"/></h1>
-    <h1><spring:message code="site.content"/></h1>
+    <h1>hello</h1>
+    <h1>name</h1>
 </div>
