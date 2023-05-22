@@ -3,20 +3,29 @@ package com.kbstar.util;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
+@Component
 public class CFRFaceUtil {
 
-    public static Object getResult(String imgpath, String imgname) throws ParseException {
+    @Value("${client_id}")
+    String client_id;
+
+    @Value("${client_key}")
+    String client_key;
+
+    public Object getResult(String imgpath, String imgname) throws ParseException {
         String result = "";
 
         StringBuffer reqStr = new StringBuffer();
-        String clientId = "ie9utj5mcf";
-        String clientSecret = "8n65Sg3Re6xM7uhcWw68QUJizvOcD3VSHTa356uY";//애플리케이션 클라이언트 시크릿값";
+        String clientId = client_id;
+        String clientSecret = client_key;//애플리케이션 클라이언트 시크릿값";
 
         try {
             String paramName = "image"; // 파라미터명은 image로 지정

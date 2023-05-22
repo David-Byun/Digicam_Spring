@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOGS_DIR" value="/Users/david/Digicam_Spring(0421)/log" />
+<!--<property name="LOGS_DIR" value="/Users/david/Digicam_Spring(0421)/log" />-->
+<!--    리눅스일 경우 사용-->
+    <property name="LOGS_DIR" value="/root/logs" />
     <!-- 아래 디렉토리에 로그 찍겠다 -->
     <!-- 레이아웃에 근거해서 실행 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

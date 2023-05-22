@@ -7,7 +7,7 @@
     <!-- 들어간것은 parameterType, 결과값은 resultType -->
     <select id="select" parameterType="Integer" resultType="cart">
         SELECT c.id, c.cust_id, c.item_id, c.cnt, c.rdate, cu.name AS cust_name, it.name AS item_name, it.price AS item_price, it.imgname
-        FROM cart c, cust cu, item it
+        FROM carttest c, custtest cu, itemtest it
         WHERE c.cust_id= cu.id
         AND c.item_id= it.id
         AND c.id = #{id}
@@ -15,7 +15,7 @@
     <select id="getmycart" parameterType="String" resultType="cart">
         SELECT c.id, c.cust_id, c.item_id, c.cnt, c.rdate, cu.name AS cust_name, it.name AS item_name, it.price AS item_price,
         it.imgname AS item_imgname
-        FROM cart c, cust cu, item it
+        FROM carttest c, custtest cu, itemtest it
         WHERE c.cust_id= cu.id
         AND c.item_id= it.id
         AND c.cust_id = #{id}

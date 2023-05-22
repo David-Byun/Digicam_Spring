@@ -7,12 +7,12 @@
 <!--custDTO = cust-->
     <select id="select" parameterType="String" resultType="item">
     -- select 하면 String이 들어오고 item를 리턴
-        SELECT * FROM item WHERE id=#{id}
+        SELECT * FROM itemtest WHERE id=#{id}
         -- 입력한 값이 id가 됨
     </select>
 
     <select id="selectall" resultType="item">
-        SELECT * FROM item
+        SELECT * FROM itemtest
     </select>
 
     <select id="getpage" resultType="item">
