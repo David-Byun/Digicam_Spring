@@ -19,6 +19,6 @@ public class EmailTest {
     @Test
     void contextLoads() throws Exception {
         log.info("start email test ================");
-        sendMailUtil.sendSimpleMessage("kbdavid890414@gmail.com", "회원가입을 축하드립니다.");
+        sendMailUtil.sendAuthMessage("kbdavid890414@gmail.com", "회원가입을 축하드립니다.");
     }
 }
